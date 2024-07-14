@@ -1,0 +1,686 @@
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        UserService.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS G:\Codes\Git-Course> git add UserService.txt
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   UserService.txt
+
+PS G:\Codes\Git-Course> git commit -m "UserService created"
+[main 20fda0b] UserService created
+ 1 file changed, 1 insertion(+)
+ create mode 100644 UserService.txt
+PS G:\Codes\Git-Course> push -u origin main
+push : The term 'push' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the 
+name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ push -u origin main
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (push:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS G:\Codes\Git-Course> git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes | 306.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Yogeshzade-git/git-course.git
+   eecb92d..20fda0b  main -> main
+branch 'main' set up to track 'origin/main'.
+PS G:\Codes\Git-Course> git pull -u origin main
+error: unknown switch `u'
+usage: git pull [<options>] [<repository> [<refspec>...]]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]progress       force progress reporting
+    --[no-]recurse-submodules[=<on-demand>]
+                          control for recursive fetching of submodules
+
+Options related to merging
+    -r, --[no-]rebase[=(false|true|merges|interactive)]
+                          incorporate changes by rebasing rather than merging
+    -n                    do not show a diffstat at the end of the merge
+    --[no-]stat           show a diffstat at the end of the merge
+    --[no-]log[=<n>]      add (at most <n>) entries from shortlog to merge commit message
+    --[no-]signoff[=...]  add a Signed-off-by trailer
+    --[no-]squash         create a single commit instead of doing a merge
+    --[no-]commit         perform a commit if the merge succeeds (default)
+    --[no-]edit           edit message before committing
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]ff             allow fast-forward
+    --ff-only             abort if fast-forward is not possible
+    --[no-]verify         control use of pre-merge-commit and commit-msg hooks
+    --[no-]verify-signatures
+                          verify that the named commit has a valid GPG signature
+    --[no-]autostash      automatically stash/stash pop before and after
+    -s, --[no-]strategy <strategy>
+                          merge strategy to use
+    -X, --[no-]strategy-option <option=value>
+                          option for selected merge strategy
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+    --[no-]allow-unrelated-histories
+                          allow merging unrelated histories
+
+Options related to fetching
+    --[no-]all            fetch from all remotes
+    -a, --[no-]append     append to .git/FETCH_HEAD instead of overwriting
+    --[no-]upload-pack <path>
+                          path to upload pack on remote end
+    -f, --[no-]force      force overwrite of local branch
+    -t, --[no-]tags       fetch all tags and associated objects
+    -p, --[no-]prune      prune remote-tracking branches no longer on remote
+    -j, --[no-]jobs[=<n>] number of submodules pulled in parallel
+    --[no-]dry-run        dry run
+    -k, --[no-]keep       keep downloaded pack
+    --[no-]depth <depth>  deepen history of shallow clone
+    --[no-]shallow-since <time>
+                          deepen history of shallow repository based on time
+    --[no-]shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --[no-]deepen <n>     deepen history of shallow clone
+    --unshallow           convert to a complete repository
+    --[no-]update-shallow accept refs that update .git/shallow
+    --refmap <refmap>     specify fetch refmap
+    -o, --[no-]server-option <server-specific>
+                          option to transmit
+    -4, --[no-]ipv4       use IPv4 addresses only
+    -6, --[no-]ipv6       use IPv6 addresses only
+    --[no-]negotiation-tip <revision>
+                          report that we have only objects reachable from this object
+    --[no-]show-forced-updates
+                          check for forced-updates on all updated branches
+    --[no-]set-upstream   set upstream for git pull/fetch
+
+PS G:\Codes\Git-Course> git pull origin
+Updating 20fda0b..4c39ded
+Fast-forward
+ HelloRemote.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 HelloRemote.txt
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   HelloRemote.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS G:\Codes\Git-Course> git commit -a -m "Local and Remote are interacting well"
+[main c9b1ed6] Local and Remote are interacting well
+ 1 file changed, 2 insertions(+)
+PS G:\Codes\Git-Course> git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 396 bytes | 396.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Yogeshzade-git/git-course.git
+   4c39ded..c9b1ed6  main -> main
+branch 'main' set up to track 'origin/main'.
+PS G:\Codes\Git-Course> git pull origin main
+From github.com:Yogeshzade-git/git-course
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git remote -v
+origin  git@github.com:Yogeshzade-git/git-course.git (fetch)
+origin  git@github.com:Yogeshzade-git/git-course.git (push)
+PS G:\Codes\Git-Course> git tag 
+PS G:\Codes\Git-Course> git tag v1.0 -m "The First Release"
+PS G:\Codes\Git-Course> git tag
+v1.0
+PS G:\Codes\Git-Course> git add UserService.txt
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   UserService.txt
+
+PS G:\Codes\Git-Course> git commit -m "User Data Processing"
+[main ded05b3] User Data Processing
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS G:\Codes\Git-Course> git Status
+git: 'Status' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 292.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Yogeshzade-git/git-course.git
+   c9b1ed6..ded05b3  main -> main
+branch 'main' set up to track 'origin/main'.
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git tag v1.1 -m "14th July Release"
+PS G:\Codes\Git-Course> git push origin main
+Everything up-to-date
+PS G:\Codes\Git-Course> git tag
+v1.0
+v1.1
+PS G:\Codes\Git-Course> git push origin v1.0
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 166 bytes | 166.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Yogeshzade-git/git-course.git
+ * [new tag]         v1.0 -> v1.0
+PS G:\Codes\Git-Course> git push origin main v1.1
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 165 bytes | 165.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Yogeshzade-git/git-course.git
+ * [new tag]         v1.1 -> v1.1
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git tag
+v1.0
+v1.1
+PS G:\Codes\Git-Course> git branch
+* main
+PS G:\Codes\Git-Course> git -b
+unknown option: -b
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+PS G:\Codes\Git-Course> git statrus
+git: 'statrus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git checkout feature1
+error: pathspec 'feature1' did not match any file(s) known to git
+PS G:\Codes\Git-Course> git checkout -b feature1
+Switched to a new branch 'feature1'
+PS G:\Codes\Git-Course> giit branch
+giit : The term 'giit' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the 
+name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ giit branch
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (giit:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS G:\Codes\Git-Course> git branch 
+* feature1
+  main
+PS G:\Codes\Git-Course> git status
+On branch feature1
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git branch
+* feature1
+  main
+PS G:\Codes\Git-Course> git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   UserService.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS G:\Codes\Git-Course> git add Userservice.txt -m "The new line added to the feature1 branch"
+error: unknown switch `m'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --[no-]dry-run    dry run
+    -v, --[no-]verbose    be verbose
+
+    -i, --[no-]interactive
+                          interactive picking
+    -p, --[no-]patch      select hunks interactively
+    -e, --[no-]edit       edit current diff and apply
+    -f, --[no-]force      allow adding otherwise ignored files
+    -u, --[no-]update     update tracked files
+    --[no-]renormalize    renormalize EOL of tracked files (implies -u)
+    -N, --[no-]intent-to-add
+                          record only the fact that the path will be added later
+    -A, --[no-]all        add changes from all tracked and untracked files
+    --[no-]ignore-removal ignore paths removed in the working tree (same as --no-all)
+    --[no-]refresh        don't add, only refresh the index
+    --[no-]ignore-errors  just skip files which cannot be added because of errors
+    --[no-]ignore-missing check if - even missing - files are ignored in dry run
+    --[no-]sparse         allow updating entries outside of the sparse-checkout cone
+    --[no-]chmod (+|-)x   override the executable bit of the listed files
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+PS G:\Codes\Git-Course> git add Userservice.txt                                                
+PS G:\Codes\Git-Course> git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   UserService.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS G:\Codes\Git-Course> git push origin         
+fatal: The current branch feature1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature1
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS G:\Codes\Git-Course> git push origin feature1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'feature1' on GitHub by visiting:
+remote:      https://github.com/Yogeshzade-git/git-course/pull/new/feature1
+remote:
+To github.com:Yogeshzade-git/git-course.git
+ * [new branch]      feature1 -> feature1
+PS G:\Codes\Git-Course> git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   UserService.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS G:\Codes\Git-Course> git commit -m "The UserService is updated for testing the branch concept"
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   UserService.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS G:\Codes\Git-Course> git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   UserService.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS G:\Codes\Git-Course> git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   UserService.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS G:\Codes\Git-Course> git add .
+PS G:\Codes\Git-Course> git status
+On branch feature1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   UserService.txt
+
+PS G:\Codes\Git-Course> git commit -m "The UserService is updated for feature1 branch"
+[feature1 ccb205c] The UserService is updated for feature1 branch
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+PS G:\Codes\Git-Course> git push origin feature1 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 347 bytes | 347.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Yogeshzade-git/git-course.git
+   ded05b3..ccb205c  feature1 -> feature1
+PS G:\Codes\Git-Course> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git checkout feature1
+Switched to branch 'feature1'
+PS G:\Codes\Git-Course> git status
+On branch feature1
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git log
+commit ded05b3951e4b7011b56ed8f28d8e30eb0e1d813 (HEAD -> main, tag: v1.1, origin/main)
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 17:09:00 2024 +0530
+
+    User Data Processing
+
+commit c9b1ed600ce5e4ea44fa6144c8e484572716db49 (tag: v1.0)
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 11:57:25 2024 +0530
+
+    Local and Remote are interacting well
+
+commit 4c39ded8b6714f4f3827477473684b3c5404f609
+PS G:\Codes\Git-Course> git switch feature1
+Switched to branch 'feature1'
+PS G:\Codes\Git-Course> git log
+commit ccb205cea7eaffab79ecde8ab2c8b9fc17db1027 (HEAD -> feature1, origin/feature1)
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 18:40:38 2024 +0530
+
+    The UserService is updated for feature1 branch
+
+commit ded05b3951e4b7011b56ed8f28d8e30eb0e1d813 (tag: v1.1, origin/main, main)
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 17:09:00 2024 +0530
+
+    User Data Processing
+
+commit c9b1ed600ce5e4ea44fa6144c8e484572716db49 (tag: v1.0)
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 11:57:25 2024 +0530
+
+    Local and Remote are interacting well
+
+commit 4c39ded8b6714f4f3827477473684b3c5404f609
+Author: Yogesh Zade <90820986+Yogeshzade-git@users.noreply.github.com>
+Date:   Sun Jul 14 11:55:34 2024 +0530
+
+    Created the  HelloRemote.txt for practice
+
+commit 20fda0b7b3a92bef4b0b213ac008e2c6b45dac42
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 11:50:12 2024 +0530
+
+    UserService created
+
+commit eecb92d2a6207a699cd87bf96cee5095edc3068d
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 11:28:13 2024 +0530
+
+    my first commit
+PS G:\Codes\Git-Course> git branch 
+* feature1
+  main
+PS G:\Codes\Git-Course> git status
+On branch feature1
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git branch
+  feature1
+* main
+PS G:\Codes\Git-Course> git status 
+On branch main
+Your branch is up to date with 'origin/main'.
+     
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git switch -c feature2 
+Switched to a new branch 'feature2'
+PS G:\Codes\Git-Course> git branch --all
+  feature1
+* feature2
+  main
+  remotes/origin/feature1
+  remotes/origin/main
+PS G:\Codes\Git-Course> git branch -d feature2
+error: cannot delete branch 'feature2' used by worktree at 'G:/Codes/Git-Course'
+PS G:\Codes\Git-Course> git  switch main   
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> gri brach -d feature2
+gri : The term 'gri' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the 
+name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ gri brach -d feature2
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (gri:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS G:\Codes\Git-Course> git  brach -d feature2
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+PS G:\Codes\Git-Course> git brach -d feature2 
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+PS G:\Codes\Git-Course> git branch -d feature2
+Deleted branch feature2 (was ded05b3).
+PS G:\Codes\Git-Course> git branch
+  feature1
+* main
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course>  git switch -
+fatal: invalid reference: @{-1}
+PS G:\Codes\Git-Course> git switch feature1
+Switched to branch 'feature1'
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'feature1'
+PS G:\Codes\Git-Course> git status
+On branch feature1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        AdminData.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS G:\Codes\Git-Course> git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+PS G:\Codes\Git-Course> git commit -m "The AdminData has been updated"
+On branch feature1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        AdminData.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS G:\Codes\Git-Course> git add .
+PS G:\Codes\Git-Course> git commit -m "The AdminData has been updated"
+[feature1 9303b49] The AdminData has been updated
+ 1 file changed, 3 insertions(+)
+ create mode 100644 AdminData.txt
+PS G:\Codes\Git-Course> git status
+On branch feature1
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> git branch --all
+* feature1
+  main
+  remotes/origin/feature1
+  remotes/origin/main
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'feature1'
+PS G:\Codes\Git-Course> git push origin
+fatal: The current branch feature1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature1
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS G:\Codes\Git-Course> git push origin feature1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 353 bytes | 353.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Yogeshzade-git/git-course.git
+   ccb205c..9303b49  feature1 -> feature1
+PS G:\Codes\Git-Course> git branch
+* feature1
+  main
+PS G:\Codes\Git-Course> git switch -a
+error: unknown switch `a'
+usage: git switch [<options>] [<branch>]
+
+    -c, --[no-]create <branch>
+                          create and switch to a new branch
+    -C, --[no-]force-create <branch>
+                          create/reset and switch to a branch
+    --[no-]guess          second guess 'git switch <no-such-branch>'
+    --[no-]discard-changes
+                          throw away local modifications
+    -q, --[no-]quiet      suppress progress reporting
+    --[no-]recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --[no-]progress       force progress reporting
+    -m, --[no-]merge      perform a 3-way merge with the new branch
+    --[no-]conflict <style>
+                          conflict style (merge, diff3, or zdiff3)
+    -d, --[no-]detach     detach HEAD at named commit
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --[no-]force      force checkout (throw away local modifications)
+    --[no-]orphan <new-branch>
+                          new unborn branch
+    --[no-]overwrite-ignore
+                          update ignored files (default)
+    --[no-]ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+
+PS G:\Codes\Git-Course> git switch - 
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git log
+commit ded05b3951e4b7011b56ed8f28d8e30eb0e1d813 (HEAD -> main, tag: v1.1, origin/main)
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 17:09:00 2024 +0530
+
+    User Data Processing
+
+commit c9b1ed600ce5e4ea44fa6144c8e484572716db49 (tag: v1.0)
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 11:57:25 2024 +0530
+
+    Local and Remote are interacting well
+
+commit 4c39ded8b6714f4f3827477473684b3c5404f609
+Author: Yogesh Zade <90820986+Yogeshzade-git@users.noreply.github.com>
+Date:   Sun Jul 14 11:55:34 2024 +0530
+
+    Created the  HelloRemote.txt for practice
+
+commit 20fda0b7b3a92bef4b0b213ac008e2c6b45dac42
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 11:50:12 2024 +0530
+
+    UserService created
+
+commit eecb92d2a6207a699cd87bf96cee5095edc3068d
+Author: yogesh <ymzade2019@gmail.com>
+Date:   Sun Jul 14 11:28:13 2024 +0530
+
+    my first commit
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'feature1'
+Your branch is up to date with 'origin/feature1'.
+PS G:\Codes\Git-Course> git branch 
+* feature1
+  main
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git branch  
+  feature1
+* main
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'feature1'
+Your branch is up to date with 'origin/feature1'.
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'feature1'
+Your branch is up to date with 'origin/feature1'.
+PS G:\Codes\Git-Course> git switch -
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS G:\Codes\Git-Course> git merge feature1
+Updating ded05b3..9303b49
+Fast-forward
+ AdminData.txt   | 3 +++
+ UserService.txt | 4 +++-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 AdminData.txt
+PS G:\Codes\Git-Course> git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Yogeshzade-git/git-course.git
+   ded05b3..9303b49  main -> main
+PS G:\Codes\Git-Course> git pull origin main
+From github.com:Yogeshzade-git/git-course
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+PS G:\Codes\Git-Course> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS G:\Codes\Git-Course> 
